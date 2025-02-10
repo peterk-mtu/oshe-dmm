@@ -5475,16 +5475,6 @@
 	)
 	(wire
 		(pts
-			(xy 410.21 88.9) (xy 410.21 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b591404d-979c-45d4-8c3b-f588d723271a")
-	)
-	(wire
-		(pts
 			(xy 472.44 110.49) (xy 461.01 110.49)
 		)
 		(stroke
@@ -5795,7 +5785,7 @@
 	)
 	(wire
 		(pts
-			(xy 410.21 45.72) (xy 410.21 77.47)
+			(xy 410.21 45.72) (xy 410.21 88.9)
 		)
 		(stroke
 			(width 0)
@@ -6111,17 +6101,6 @@
 			(justify left bottom)
 		)
 		(uuid "3f73ea0e-d397-4e60-9420-dccfac3a2856")
-	)
-	(label "R-ITERM"
-		(at 410.21 77.47 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "b2839057-36ed-464a-a1b3-4bee2e48620c")
 	)
 	(label "R-ISET"
 		(at 461.01 77.47 0)
@@ -7251,7 +7230,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0451f023-fe37-4154-a729-003b7d0bf7b5")
-		(property "Reference" "R4"
+		(property "Reference" "R3"
 			(at 433.07 80.0099 0)
 			(effects
 				(font
@@ -7305,7 +7284,7 @@
 		(instances
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "R4")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -7321,7 +7300,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "121253c7-dddc-488a-83fd-c256cef8fa1b")
-		(property "Reference" "R10"
+		(property "Reference" "R9"
 			(at 539.75 44.4499 0)
 			(effects
 				(font
@@ -7375,7 +7354,7 @@
 		(instances
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "R10")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -7524,75 +7503,6 @@
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
 					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_US")
-		(at 410.21 81.28 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "23bfa3f7-b953-4650-aee9-13d146b757c9")
-		(property "Reference" "R3"
-			(at 412.75 80.0099 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1.24k"
-			(at 412.75 82.5499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
-			(at 411.226 81.534 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 410.21 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 410.21 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e48871a6-dd42-4b93-9d9a-6f08cbe0d44c")
-		)
-		(pin "1"
-			(uuid "3ccaa5e5-6d92-4cbc-968f-2a9cb976c06b")
-		)
-		(instances
-			(project "oshe_dmm_project_v1"
-				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -8203,7 +8113,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3d5beba0-bee2-443f-9ba4-a9f40065e108")
-		(property "Reference" "R6"
+		(property "Reference" "R5"
 			(at 463.55 80.0099 0)
 			(effects
 				(font
@@ -8257,7 +8167,7 @@
 		(instances
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "R6")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -8554,7 +8464,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_Molex_105450-0101"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4085"
 			(at 351.79 48.26 0)
 			(effects
 				(font
@@ -9473,7 +9383,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8cd91792-0eb9-4882-8fda-7295466de003")
-		(property "Reference" "R9"
+		(property "Reference" "R8"
 			(at 534.67 105.4099 0)
 			(effects
 				(font
@@ -9527,7 +9437,7 @@
 		(instances
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "R9")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -9677,7 +9587,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aace8a86-d941-4e9d-9624-06a81ee741f2")
-		(property "Reference" "R7"
+		(property "Reference" "R6"
 			(at 524.002 118.11 0)
 			(effects
 				(font
@@ -9731,7 +9641,7 @@
 		(instances
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "R7")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -10337,7 +10247,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f70df944-763d-4145-b5c1-b87a83e776a7")
-		(property "Reference" "R8"
+		(property "Reference" "R7"
 			(at 527.05 44.4499 0)
 			(effects
 				(font
@@ -10391,7 +10301,7 @@
 		(instances
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "R8")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -10680,7 +10590,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ff4a4b8a-fb7c-4ea9-ac6c-b8d6ea52b286")
-		(property "Reference" "R5"
+		(property "Reference" "R4"
 			(at 453.39 80.0099 0)
 			(effects
 				(font
@@ -10734,7 +10644,7 @@
 		(instances
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "R5")
+					(reference "R4")
 					(unit 1)
 				)
 			)
