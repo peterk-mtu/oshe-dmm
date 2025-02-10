@@ -4168,6 +4168,12 @@
 		(uuid "41cee3b3-97ff-4b31-bbb8-ddd46b9aea23")
 	)
 	(junction
+		(at 445.77 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4c2f0618-78a0-4099-a144-8493d64f1b54")
+	)
+	(junction
 		(at 509.27 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4268,12 +4274,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ceb1595b-55e4-4b04-aef3-f715a17fa978")
-	)
-	(junction
-		(at 445.77 110.49)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d07dd54d-4e43-402a-8b5c-765860341f33")
 	)
 	(junction
 		(at 548.64 100.33)
@@ -5477,6 +5477,16 @@
 	)
 	(wire
 		(pts
+			(xy 440.69 105.41) (xy 445.77 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af25c847-7fb5-4e80-9adb-17bda69a58f8")
+	)
+	(wire
+		(pts
 			(xy 373.38 97.79) (xy 375.92 97.79)
 		)
 		(stroke
@@ -5647,13 +5657,13 @@
 	)
 	(wire
 		(pts
-			(xy 440.69 105.41) (xy 445.77 105.41)
+			(xy 440.69 110.49) (xy 445.77 110.49)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c59fb567-3e4b-41ef-885e-26dd70eef142")
+		(uuid "c48d3785-0485-4e46-b669-f42eb3704393")
 	)
 	(wire
 		(pts
@@ -5694,16 +5704,6 @@
 			(type default)
 		)
 		(uuid "ccbb26a1-46a7-4b49-8fe8-c9c8cd2c8478")
-	)
-	(wire
-		(pts
-			(xy 440.69 110.49) (xy 445.77 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d0897411-057f-41ca-aae7-981eecc7c6fa")
 	)
 	(wire
 		(pts
@@ -6251,7 +6251,7 @@
 		)
 	)
 	(global_label "USB_Power_IN"
-		(shape input)
+		(shape output)
 		(at 397.51 29.21 0)
 		(fields_autoplaced yes)
 		(effects
@@ -6273,7 +6273,7 @@
 		)
 	)
 	(global_label "BMS_Power_Out"
-		(shape input)
+		(shape output)
 		(at 547.37 38.1 0)
 		(fields_autoplaced yes)
 		(effects
@@ -6581,7 +6581,7 @@
 		)
 	)
 	(global_label "9V_BAT_IN"
-		(shape input)
+		(shape output)
 		(at 375.92 113.03 0)
 		(fields_autoplaced yes)
 		(effects
@@ -6604,7 +6604,7 @@
 	)
 	(global_label "9V_BAT_IN"
 		(shape input)
-		(at 440.69 110.49 180)
+		(at 440.69 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6614,7 +6614,7 @@
 		)
 		(uuid "707a9c4d-a158-48aa-8c8f-ee56d0e1e8c3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 428.21 110.49 0)
+			(at 428.21 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6669,7 +6669,7 @@
 		)
 	)
 	(global_label "BMS_BAT_IN"
-		(shape input)
+		(shape output)
 		(at 375.92 97.79 0)
 		(fields_autoplaced yes)
 		(effects
@@ -6956,7 +6956,7 @@
 	)
 	(global_label "BMS_Power_Out"
 		(shape input)
-		(at 440.69 105.41 180)
+		(at 440.69 110.49 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6966,7 +6966,7 @@
 		)
 		(uuid "dcad75bc-912c-4499-b2c8-cc31f2a58b24")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 423.0092 105.41 0)
+			(at 423.0092 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6977,7 +6977,7 @@
 		)
 	)
 	(global_label "+5V"
-		(shape input)
+		(shape output)
 		(at 560.07 100.33 0)
 		(fields_autoplaced yes)
 		(effects
@@ -6999,7 +6999,7 @@
 		)
 	)
 	(global_label "+5V"
-		(shape input)
+		(shape output)
 		(at 481.33 120.65 0)
 		(fields_autoplaced yes)
 		(effects
@@ -7087,7 +7087,7 @@
 		)
 	)
 	(global_label "TS"
-		(shape input)
+		(shape output)
 		(at 359.41 95.25 0)
 		(fields_autoplaced yes)
 		(effects
@@ -7841,7 +7841,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2dfb8442-e5cc-45bb-a484-da520f603959")
-		(property "Reference" "C9"
+		(property "Reference" "C8"
 			(at 516.89 44.4499 0)
 			(effects
 				(font
@@ -7895,7 +7895,7 @@
 		(instances
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "C9")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -8051,7 +8051,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "349938b8-1223-4a56-a790-308dcd3b4f81")
-		(property "Reference" "C8"
+		(property "Reference" "C9"
 			(at 513.08 109.8549 0)
 			(effects
 				(font
@@ -8105,7 +8105,7 @@
 		(instances
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
-					(reference "C8")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -8484,7 +8484,7 @@
 				)
 			)
 		)
-		(property "Value" "SW_SPST"
+		(property "Value" "Power_Switch"
 			(at 455.93 106.68 0)
 			(effects
 				(font
@@ -8492,7 +8492,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_B3S-1000"
+		(property "Footprint" "Button_Switch_SMD:SW_SPDT_CK_JS102011SAQN"
 			(at 455.93 110.49 0)
 			(effects
 				(font
