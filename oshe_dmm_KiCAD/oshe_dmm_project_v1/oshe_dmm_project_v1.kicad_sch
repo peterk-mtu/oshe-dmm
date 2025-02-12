@@ -10716,6 +10716,120 @@
 			)
 		)
 	)
+	(sheet
+		(at 17.78 350.52)
+		(size 40.64 16.51)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "18547bfd-cd3c-4ac6-9e63-35a364b41fd6")
+		(property "Sheetname" "Current_Measurement"
+			(at 17.78 349.8084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Current_Measurement.kicad_sch"
+			(at 17.78 367.6146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "oshe_dmm_project_v1"
+				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 62.23 378.46)
+		(size 38.1 20.32)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "77594c51-f9ab-40b4-8667-82b0670b875b")
+		(property "Sheetname" "Input_Protection"
+			(at 62.23 377.7484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Input_Protection.kicad_sch"
+			(at 62.23 399.3646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "oshe_dmm_project_v1"
+				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 17.78 378.46)
+		(size 40.64 20.32)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ce55a0ad-4636-479f-99fa-ce32fe5b4c39")
+		(property "Sheetname" "Voltage_Measurement"
+			(at 17.78 377.7484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Voltage_Measurement.kicad_sch"
+			(at 17.78 399.3646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "oshe_dmm_project_v1"
+				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
+					(page "2")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

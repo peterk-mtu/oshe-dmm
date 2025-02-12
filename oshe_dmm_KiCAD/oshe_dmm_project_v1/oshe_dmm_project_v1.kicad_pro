@@ -578,6 +578,18 @@
     [
       "24c8480a-c336-4df0-8536-7016ee8fc0ac",
       "Root"
+    ],
+    [
+      "ce55a0ad-4636-479f-99fa-ce32fe5b4c39",
+      "Voltage_Measurement"
+    ],
+    [
+      "18547bfd-cd3c-4ac6-9e63-35a364b41fd6",
+      "Current_Measurement"
+    ],
+    [
+      "77594c51-f9ab-40b4-8667-82b0670b875b",
+      "Input_Protection"
     ]
   ],
   "text_variables": {}
