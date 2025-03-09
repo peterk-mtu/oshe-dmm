@@ -1023,7 +1023,7 @@
 		)
 		(fp_arc
 			(start 64.20104 22.49932)
-			(mid 64.054479 22.85315)
+			(mid 64.054473 22.853115)
 			(end 63.70066 22.9997)
 			(stroke
 				(width 0.12)
@@ -13373,7 +13373,7 @@
 	(footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 		(layer "F.Cu")
 		(uuid "c54229e7-21d4-4a38-995a-0a2091cdf2fb")
-		(at 196.315 151.491 -90)
+		(at 198.465 148.978 -90)
 		(descr "Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R10"
