@@ -9429,7 +9429,6 @@
 	)
 	(label "R-ILIM"
 		(at 294.64 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9440,7 +9439,6 @@
 	)
 	(label "2V"
 		(at 72.39 198.12 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9451,7 +9449,6 @@
 	)
 	(label "200V"
 		(at 72.39 223.52 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9462,7 +9459,6 @@
 	)
 	(label "R-ISET"
 		(at 303.53 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9473,7 +9469,6 @@
 	)
 	(label "20V"
 		(at 72.39 210.82 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9812,7 +9807,7 @@
 			)
 		)
 	)
-	(global_label "MISO{slash}D12"
+	(global_label "MOSI{slash}D11"
 		(shape input)
 		(at 149.86 29.21 180)
 		(fields_autoplaced yes)
@@ -10384,7 +10379,7 @@
 			)
 		)
 	)
-	(global_label "MOSI{slash}D11"
+	(global_label "MISO{slash}D12"
 		(shape input)
 		(at 149.86 34.29 180)
 		(fields_autoplaced yes)
