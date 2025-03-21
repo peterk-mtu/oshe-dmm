@@ -3,6 +3,9 @@
 #include <Wire.h>
 //LCD Screen Library
 #include <LiquidCrystal.h>
+//Voltage Library
+
+//Voltage Initialization
 
 //Initialize LCD Screen
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //(rs, enable, d4, d5, d6, d7)
@@ -11,13 +14,29 @@ LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //(rs, enable, d4, d5, d6, d7)
 INA219 INA(0x40); //0x40 because both A1 and A0 pins are grounded adress is set to 1000000 in binary which is 0x40 in hexicimal
 //Current Measurement in amps
 
+
+
+
+//Define Inputs Outputs
+
+
+// Define Variables
+int mode=0;
+int modePrev=0;
+int modeRead=0;
 void setup()
 {
+
+while (!Serial) {
+      // pause until available
+      delay(1);
+  }
 
 Serial.begin(9600) //communication to serial monitor
 Wire.begin() //i2c communication/ inirialize i2c bus sets mircrontroller as master
 
-
+Serial.println("");
+  Serial.println("Hello!");
 
 
 
@@ -33,13 +52,14 @@ Wire.begin() //i2c communication/ inirialize i2c bus sets mircrontroller as mast
   {
     Serial.println("Could not connect");
   }
+
 INA.setMaxCurrentShunt(5,.1); //Set max current and shunt resistance can be changed
 Serial.println("Is it calibrated "+INA.isCalibrated());
 Serial.println("LSB current: "+INA.getCurentLSB());
 Serial.println("Shunt resistance "+INA.getShunt());
 Serial.println("Max Current "+INA.getMaxCurrent());
 
-
+modePrev=mode;
 
 }
 
@@ -62,10 +82,64 @@ void loop() {
 //Figure out what Mode we are in
 //go to if statement and perfrom meausrement. Repeat
 
-int mode=0;
+
+// int modeRead=analogRead();
+//Serial.print(modeRead);
+
+
+
+//Mode Read
+/**
+
+
+if(mode_read > 190 && mode_read < 245){         //Voltage mode
+    mode = 1;    
+  }
+
+  else if(mode_read > 437 && mode_read < 720){    //Resistance mode    
+    if(mode != 7 && mode != 8){
+      mode = 2;  
+    }     
+  }
+
+  else if(mode_read > 317 && mode_read < 437){    //Inductance mode
+    mode = 3;    
+  }
+
+  else if(mode_read > 245 && mode_read < 317){    //Capacitance mode
+    if(mode != 6){
+      mode = 4;  
+    }      
+  }  
+
+  else if(mode_read > 720){                       //Current mode
+    mode = 5;    
+  }
+
+  else{
+    Serial.println("No Mode");
+  }
+
+  if(mode != mode_prev){
+    set_all_inputs();
+    mode_prev = mode;
+  }
+**/
+
+
+
+//Make sure to add delays
 
 //Voltage
 if(mode==1){
+ int voltage=0;
+
+lcd.clear();
+lcd.print("Voltage: ")
+lcd.print(voltage);
+lcd.print(" V")
+lcd.setCursor(0, 1);
+lcd.print("OSHE DMM");
 
 }
 
@@ -78,7 +152,9 @@ Serial.println("Current: "+current+" A");
 lcd.clear();
 lcd.print("Current: ")
 lcd.print(current);
-
+lcd.print(" A")
+lcd.setCursor(0, 1);
+lcd.print("OSHE DMM");
 
 }
 
