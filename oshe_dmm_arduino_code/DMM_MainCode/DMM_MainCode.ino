@@ -14,10 +14,14 @@ LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //(rs, enable, d4, d5, d6, d7)
 INA219 INA(0x40); //0x40 because both A1 and A0 pins are grounded adress is set to 1000000 in binary which is 0x40 in hexicimal
 //Current Measurement in amps
 
-
-
-
+//////////////////////////////////////////////////////////////////
 //Define Inputs Outputs
+int mode_selector = A3;  //NEED TO SET ANALOG VALUES
+
+//Voltage Mode
+int VOLT_PIN_0 = 7;      //For Voltage mode side of ADC0
+int VOLT_PIN_1 = 12;     //For Voltage mode side of ADC1
+
 
 
 // Define Variables
@@ -160,7 +164,34 @@ lcd.print("OSHE DMM");
 
 void setInputs(){
   //figure out what pins are inputs and set them
-  pinMode(currentPin,INPUT);    
+
+  //REFERENCE CODE FROM OTHER GUY SETS ALL A0-A7 & D2-D13 AS INPUTS -- VERIFY
+
+  pinMode(12,OUTPUT); //Pin 12 - D8 - PB0 - TIMER/COUNTER1 INPUT CAPTURE INPUT, DIVIDED SYSTEM CLOCK OUTPUT
+  pinMode(13,OUTPUT); //Pin 13 - D9 - PB1 - TIMER/COUNTER1 OUTPUT COMPARE
+  //pinMode(14,INPUT); //Pin 14 - D10 - PB2 - D10 PUSH BUTTON (ALREADY INPUT)
+  pinMode(15,OUTPUT); //Pin 15 - MOSI/D11 - PB3 - SPI MASTER OUT SLAVE IN, TIMER/COUNTER2 OUTPUT COMPARE
+  pinMode(VOLT_PIN_1,OUTPUT); //Pin 16 - MISO/D12 - PB4 - SPI MASTER IN SLAVE OUT
+  pinMode(17,OUTPUT); //Pin 17 - SCK/D13 - PB5 - SPI MASTER CLOCK INPUT
+  pinMode(7,INPUT); //Pin 7 - XTAL1/PB6 - LOOPS TO PIN 8, CLOCK OSCILLATOR PIN 1
+  pinMode(8,INPUT); //Pin 8 - XTAL2/PB7 - LOOPS TO PIN 7, CLOCK OSCILLATOR PIN 2
+
+  pinMode(23,INPUT); //Pin 23 - A0 - PC0 - ADC INPUT CHANNEL 0
+  pinMode(24,INPUT); //Pin 24 - A1 - PC1 - ADC INPUT CHANNEL 1
+  pinMode(25,INPUT); //Pin 25 - A2 - PC2 - ADC INPUT CHANNEL 2
+  pinMode(mode_selector,INPUT); //Pin 26 - A3 - PC3 - USED FOR MODE SELECTION - ADC INPUT CHANNEL 3
+  pinMode(currentPin,INPUT);  //Pin 27 - SDA - PC4 - I/O in schem - ADC INPUT CHANNEL 4
+  pinMode(currentPin,INPUT);  //Pin 28 - SCL - PC5 - I/O in schem - ADC INPUT CHANNEL 5
+  pinMode(29,INPUT); //Pin 29 - DTR & 5V - RESET/PC6 - RESET PIN
+
+  pinMode(30,INPUT); //Pin 30 - RXD - PD0 - USART INPUT
+  pinMode(31,INPUT); //Pin 31 - TXD - PD1 - USART OUTPUT
+  pinMode(32,INPUT); //Pin 32 - D2 - PD2 - EXTERNAL INTERRUPT 0 INPUT
+  pinMode(1,OUTPUT); //Pin 1 - D3 - PD3 - EXTERNAL INTERRUPT 1 INPUT, TIMER/COUNTER2 OUTPUT COMPARE
+  pinMode(2,OUTPUT); //Pin 2 - D4 - PD4 - USART EXTERNAL CLOCK INPUT/OUTPUT
+  pinMode(9,OUTPUT); //Pin 9 - D5 - PD5 - TIMER/COUNTER1 EXTERNAL COUNTER INPUT, TIMER/COUNTER0 OUTPUT COMPARE
+  pinMode(10,OUTPUT); //Pin 10 - D6 - PD6 - ANALOG COMPARATOR POSITIVE INPUT, TIMER/COUNTER0 OUTPUT COMPARE
+  pinMode(VOLT_PIN_0,OUTPUT); //Pin 11 - D7 - PD7 - ANALOG COMPARATOR NEGATIVE INPUT, PIN CHANGE INTERRUPT 23
 
 }
 
