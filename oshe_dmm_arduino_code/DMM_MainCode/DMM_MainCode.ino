@@ -4,9 +4,9 @@
 //LCD Screen Library
 #include <LiquidCrystal.h>
 //Voltage Library
-
+#include <Adafruit_ADS1X15.h>
 //Voltage Initialization
-
+Adafruit_ADS1115 ads;  // Create an instance for ADS1115
 //Initialize LCD Screen
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //(rs, enable, d4, d5, d6, d7)
 
@@ -14,13 +14,13 @@ LiquidCrystal lcd(12, 11, 5, 4, 3, 2); //(rs, enable, d4, d5, d6, d7)
 INA219 INA(0x40); //0x40 because both A1 and A0 pins are grounded adress is set to 1000000 in binary which is 0x40 in hexicimal
 //Current Measurement in amps
 
+
+
 //////////////////////////////////////////////////////////////////
 //Define Inputs Outputs
-int mode_selector = A3;  //NEED TO SET ANALOG VALUES
 
-//Voltage Mode
-int VOLT_PIN_0 = 7;      //For Voltage mode side of ADC0
-int VOLT_PIN_1 = 12;     //For Voltage mode side of ADC1
+
+int mode_selector = A3;  //Mode Selector Value
 
 
 
@@ -35,13 +35,32 @@ while (!Serial) {
       // pause until available
       delay(1);
   }
+/**
 
+Voltage Starter
+
+
+**/
 Serial.begin(9600) //communication to serial monitor
 Wire.begin() //i2c communication/ inirialize i2c bus sets mircrontroller as master
 
 Serial.println("");
   Serial.println("Hello!");
 
+  if (!ads.begin(0x48)) {  // Use correct I2C address (check with scanner)
+        Serial.println("ERROR: ADS1115 not found at 0x48! Check wiring.");
+        while (1);  // Halt execution if not found
+    }
+
+
+        // Set gain to avoid clipping (allows input up to ±6.144V)
+    ads.setGain(GAIN_ONE);
+
+   // Print current gain setting
+    Serial.print("Gain Setting: ");
+    Serial.println(ads.getGain());
+
+    delay(1000);
 
 
   //LCD screen helpful 
@@ -87,56 +106,31 @@ void loop() {
 //go to if statement and perfrom meausrement. Repeat
 
 
-// int modeRead=analogRead();
-//Serial.print(modeRead);
+int mode = analogRead(mode_selector);
 
-
-
-//Mode Read
-/**
-
-
-if(mode_read > 190 && mode_read < 245){         //Voltage mode
-    mode = 1;    
-  }
-
-  else if(mode_read > 437 && mode_read < 720){    //Resistance mode    
-    if(mode != 7 && mode != 8){
-      mode = 2;  
-    }     
-  }
-
-  else if(mode_read > 317 && mode_read < 437){    //Inductance mode
-    mode = 3;    
-  }
-
-  else if(mode_read > 245 && mode_read < 317){    //Capacitance mode
-    if(mode != 6){
-      mode = 4;  
-    }      
-  }  
-
-  else if(mode_read > 720){                       //Current mode
-    mode = 5;    
-  }
-
-  else{
-    Serial.println("No Mode");
-  }
-
-  if(mode != mode_prev){
-    set_all_inputs();
-    mode_prev = mode;
-  }
-**/
-
-
-
-//Make sure to add delays
-
-//Voltage
 if(mode==1){
- int voltage=0;
+ float voltage=0;
+ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false);
+    while (!ads.conversionComplete()) {
+        delay(10);
+    }
+
+    // Read ADC result
+    int16_t rawValue = ads.getLastConversionResults();
+    float voltage = ads.computeVolts(rawValue);
+
+    // Print results
+    Serial.print("Raw ADC Value: ");
+    Serial.println(rawValue);
+
+    Serial.print("Differential Voltage (V) [AIN2 - AIN3]: ");
+    Serial.println(voltage, 6);
+
+    Serial.println("Conversion completed successfully.");
+
+    // Wait 1 second before next reading
+    delay(1000);
+
 
 lcd.clear();
 lcd.print("Voltage: ")
@@ -167,31 +161,10 @@ void setInputs(){
 
   //REFERENCE CODE FROM OTHER GUY SETS ALL A0-A7 & D2-D13 AS INPUTS -- VERIFY
 
-  pinMode(12,OUTPUT); //Pin 12 - D8 - PB0 - TIMER/COUNTER1 INPUT CAPTURE INPUT, DIVIDED SYSTEM CLOCK OUTPUT
-  pinMode(13,OUTPUT); //Pin 13 - D9 - PB1 - TIMER/COUNTER1 OUTPUT COMPARE
-  //pinMode(14,INPUT); //Pin 14 - D10 - PB2 - D10 PUSH BUTTON (ALREADY INPUT)
-  pinMode(15,OUTPUT); //Pin 15 - MOSI/D11 - PB3 - SPI MASTER OUT SLAVE IN, TIMER/COUNTER2 OUTPUT COMPARE
-  pinMode(VOLT_PIN_1,OUTPUT); //Pin 16 - MISO/D12 - PB4 - SPI MASTER IN SLAVE OUT
-  pinMode(17,OUTPUT); //Pin 17 - SCK/D13 - PB5 - SPI MASTER CLOCK INPUT
-  pinMode(7,INPUT); //Pin 7 - XTAL1/PB6 - LOOPS TO PIN 8, CLOCK OSCILLATOR PIN 1
-  pinMode(8,INPUT); //Pin 8 - XTAL2/PB7 - LOOPS TO PIN 7, CLOCK OSCILLATOR PIN 2
 
-  pinMode(23,INPUT); //Pin 23 - A0 - PC0 - ADC INPUT CHANNEL 0
-  pinMode(24,INPUT); //Pin 24 - A1 - PC1 - ADC INPUT CHANNEL 1
-  pinMode(25,INPUT); //Pin 25 - A2 - PC2 - ADC INPUT CHANNEL 2
+
+//Mode Selecgor
   pinMode(mode_selector,INPUT); //Pin 26 - A3 - PC3 - USED FOR MODE SELECTION - ADC INPUT CHANNEL 3
-  pinMode(currentPin,INPUT);  //Pin 27 - SDA - PC4 - I/O in schem - ADC INPUT CHANNEL 4
-  pinMode(currentPin,INPUT);  //Pin 28 - SCL - PC5 - I/O in schem - ADC INPUT CHANNEL 5
-  pinMode(29,INPUT); //Pin 29 - DTR & 5V - RESET/PC6 - RESET PIN
-
-  pinMode(30,INPUT); //Pin 30 - RXD - PD0 - USART INPUT
-  pinMode(31,INPUT); //Pin 31 - TXD - PD1 - USART OUTPUT
-  pinMode(32,INPUT); //Pin 32 - D2 - PD2 - EXTERNAL INTERRUPT 0 INPUT
-  pinMode(1,OUTPUT); //Pin 1 - D3 - PD3 - EXTERNAL INTERRUPT 1 INPUT, TIMER/COUNTER2 OUTPUT COMPARE
-  pinMode(2,OUTPUT); //Pin 2 - D4 - PD4 - USART EXTERNAL CLOCK INPUT/OUTPUT
-  pinMode(9,OUTPUT); //Pin 9 - D5 - PD5 - TIMER/COUNTER1 EXTERNAL COUNTER INPUT, TIMER/COUNTER0 OUTPUT COMPARE
-  pinMode(10,OUTPUT); //Pin 10 - D6 - PD6 - ANALOG COMPARATOR POSITIVE INPUT, TIMER/COUNTER0 OUTPUT COMPARE
-  pinMode(VOLT_PIN_0,OUTPUT); //Pin 11 - D7 - PD7 - ANALOG COMPARATOR NEGATIVE INPUT, PIN CHANGE INTERRUPT 23
 
 }
 
