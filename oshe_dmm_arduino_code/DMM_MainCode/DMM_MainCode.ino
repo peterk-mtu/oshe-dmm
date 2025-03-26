@@ -36,22 +36,16 @@ while (!Serial) {
       delay(1);
   }
 /**
-
 Voltage Starter
-
-
 **/
 Serial.begin(9600) //communication to serial monitor
 Wire.begin() //i2c communication/ inirialize i2c bus sets mircrontroller as master
-
 Serial.println("");
-  Serial.println("Hello!");
-
+Serial.println("Hello!");
   if (!ads.begin(0x48)) {  // Use correct I2C address (check with scanner)
         Serial.println("ERROR: ADS1115 not found at 0x48! Check wiring.");
         while (1);  // Halt execution if not found
     }
-
 
         // Set gain to avoid clipping (allows input up to ±6.144V)
     ads.setGain(GAIN_ONE);
@@ -76,7 +70,7 @@ Serial.println("");
     Serial.println("Could not connect");
   }
 
-INA.setMaxCurrentShunt(5,.1); //Set max current and shunt resistance can be changed
+INA.setMaxCurrentShunt(5,.05); //Set max current and shunt resistance can be changed
 Serial.println("Is it calibrated "+INA.isCalibrated());
 Serial.println("LSB current: "+INA.getCurentLSB());
 Serial.println("Shunt resistance "+INA.getShunt());
@@ -127,17 +121,14 @@ ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false);
     Serial.println(voltage, 6);
 
     Serial.println("Conversion completed successfully.");
-
-    // Wait 1 second before next reading
-    delay(1000);
-
-
 lcd.clear();
 lcd.print("Voltage: ")
 lcd.print(voltage);
 lcd.print(" V")
 lcd.setCursor(0, 1);
 lcd.print("OSHE DMM");
+    // Wait 1 second before next reading
+    delay(1000);
 
 }
 
@@ -158,9 +149,6 @@ lcd.print("OSHE DMM");
 
 void setInputs(){
   //figure out what pins are inputs and set them
-
-  //REFERENCE CODE FROM OTHER GUY SETS ALL A0-A7 & D2-D13 AS INPUTS -- VERIFY
-
 
 
 //Mode Selecgor
