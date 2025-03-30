@@ -18214,6 +18214,44 @@
 			)
 		)
 	)
+	(sheet
+		(at 226.06 255.27)
+		(size 44.45 21.59)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "66038875-622e-477c-8adf-f6f44b4abfa5")
+		(property "Sheetname" "dmm_test_circuit"
+			(at 226.06 254.5584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "dmm_test_circuit.kicad_sch"
+			(at 226.06 277.4446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "oshe_dmm_project_v1"
+				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
+					(page "2")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
