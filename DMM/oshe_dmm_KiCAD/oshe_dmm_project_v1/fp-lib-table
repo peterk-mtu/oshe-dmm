@@ -1,4 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "DMM_Footprint_Library")(type "KiCad")(uri "${KIPRJMOD}/oshe_dmm_custom/DMM_Footprint_Library.pretty")(options "")(descr ""))
-)
