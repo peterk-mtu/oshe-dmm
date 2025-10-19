@@ -11,7 +11,7 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.15)
 			)
 		)
 	)
@@ -98,44 +98,6 @@
 			(font
 				(size 1 1)
 				(thickness 0.15)
-			)
-		)
-	)
-	(dimension
-		(type orthogonal)
-		(layer "Dwgs.User")
-		(uuid "d293f239-afd0-47e3-b56d-29ce1701a54c")
-		(pts
-			(xy -8.25 -4.25) (xy 8.25 -4.25)
-		)
-		(height -2.25)
-		(orientation 0)
-		(format
-			(prefix "")
-			(suffix "")
-			(units 3)
-			(units_format 0)
-			(precision 4)
-			(suppress_zeroes yes)
-		)
-		(style
-			(thickness 0.1)
-			(arrow_length 1.27)
-			(text_position_mode 0)
-			(arrow_direction outward)
-			(extension_height 0.58642)
-			(extension_offset 0.5)
-			(keep_text_aligned yes)
-		)
-		(gr_text "16.5"
-			(at 0 -7.65 0)
-			(layer "Dwgs.User")
-			(uuid "d293f239-afd0-47e3-b56d-29ce1701a54c")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
 			)
 		)
 	)
