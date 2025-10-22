@@ -5447,7 +5447,7 @@
 		)
 		(uuid "01297eb6-1cd3-471d-b5c1-aec4b74ceb4e")
 	)
-	(text "Resistors need footprints, \nNeed to add another input to switching system for Rmeas"
+	(text "Need to add another input to switching system for Rmeas"
 		(exclude_from_sim no)
 		(at 223.52 160.528 0)
 		(effects
@@ -10140,6 +10140,28 @@
 			)
 		)
 	)
+	(global_label "Input_Negative"
+		(shape input)
+		(at 279.4 143.51 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "af3cbdb1-2566-414b-9ed7-436680e4185e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 262.5659 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "A3"
 		(shape input)
 		(at 336.55 143.51 180)
@@ -10708,6 +10730,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Resistance_Input"
+		(shape input)
+		(at 279.4 105.41 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f8b8b1ca-d367-4557-a5ff-44173c613807")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 262.5659 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -12868,7 +12912,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 236.474 122.174 90)
 			(effects
 				(font
@@ -13617,7 +13661,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 236.474 127.254 90)
 			(effects
 				(font
@@ -13684,7 +13728,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 236.474 129.794 90)
 			(effects
 				(font
@@ -13821,7 +13865,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 236.474 124.714 90)
 			(effects
 				(font
@@ -14223,7 +14267,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 236.474 114.554 90)
 			(effects
 				(font
@@ -14641,7 +14685,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 232.41 147.32 0)
 			(effects
 				(font
@@ -15325,7 +15369,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 236.474 117.094 90)
 			(effects
 				(font
@@ -15728,7 +15772,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 236.474 119.634 90)
 			(effects
 				(font
@@ -17072,7 +17116,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 236.474 132.334 90)
 			(effects
 				(font
