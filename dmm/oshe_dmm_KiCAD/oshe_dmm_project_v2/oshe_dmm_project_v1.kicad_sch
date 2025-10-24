@@ -2750,6 +2750,144 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Diode:SMAJ200A"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMAJ200A"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_SMD:D_SMA"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
+				(at -1.27 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "400W unidirectional Transient Voltage Suppressor, 200.0Vr, SMA(DO-214AC)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "unidirectional diode TVS voltage suppressor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "D*SMA*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SMAJ200A_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SMAJ200A_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Diode:SMAJ200CA"
 			(pin_numbers
 				(hide yes)
@@ -5917,6 +6055,12 @@
 		(uuid "e65a2bac-8bf1-49b2-a50b-5e8960ab7f9c")
 	)
 	(junction
+		(at 279.4 105.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e85608c0-26f4-4f6a-ae8b-8ba892d81b65")
+	)
+	(junction
 		(at 254 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5947,8 +6091,16 @@
 		(uuid "f69c643f-89ac-4661-b357-6450f9418037")
 	)
 	(no_connect
+		(at 279.4 138.43)
+		(uuid "132e0aa4-345e-4f9d-bf54-66527ec5a630")
+	)
+	(no_connect
 		(at 153.67 41.91)
 		(uuid "3a1cf5bb-ef7f-46a3-aab6-e6401d0df3d1")
+	)
+	(no_connect
+		(at 285.75 106.68)
+		(uuid "4c3f9def-15f4-40cc-96a1-93ce0c1e9c01")
 	)
 	(no_connect
 		(at 153.67 44.45)
@@ -5999,6 +6151,16 @@
 			(type default)
 		)
 		(uuid "0328c709-0c10-4a1d-8203-1265916db0da")
+	)
+	(wire
+		(pts
+			(xy 374.65 107.95) (xy 374.65 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0335340e-c8ab-4345-b913-6ca2cdea5ffe")
 	)
 	(wire
 		(pts
@@ -7552,6 +7714,16 @@
 	)
 	(wire
 		(pts
+			(xy 285.75 127) (xy 279.4 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "888d8f69-763a-478a-9655-5e52af794f33")
+	)
+	(wire
+		(pts
 			(xy 88.9 104.14) (xy 93.98 104.14)
 		)
 		(stroke
@@ -7722,6 +7894,16 @@
 	)
 	(wire
 		(pts
+			(xy 285.75 106.68) (xy 285.75 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96160590-bb92-416d-a6cd-4bb4c620dec8")
+	)
+	(wire
+		(pts
 			(xy 336.55 97.79) (xy 341.63 97.79)
 		)
 		(stroke
@@ -7739,6 +7921,16 @@
 			(type default)
 		)
 		(uuid "975e9b2c-3ff8-4eb2-8082-83f0b1d323bb")
+	)
+	(wire
+		(pts
+			(xy 374.65 99.06) (xy 374.65 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97d45bdb-2bc2-4963-8830-e538b04b98ef")
 	)
 	(wire
 		(pts
@@ -8132,6 +8324,16 @@
 	)
 	(wire
 		(pts
+			(xy 372.11 95.25) (xy 377.19 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bea12320-c469-41dc-8f5f-308281afca74")
+	)
+	(wire
+		(pts
 			(xy 339.09 105.41) (xy 339.09 106.68)
 		)
 		(stroke
@@ -8239,6 +8441,16 @@
 			(type default)
 		)
 		(uuid "c77e202c-107e-4678-941c-315d3c90d4e4")
+	)
+	(wire
+		(pts
+			(xy 285.75 125.73) (xy 285.75 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c835e95d-094f-45b4-a803-22ec5311ea19")
 	)
 	(wire
 		(pts
@@ -8392,6 +8604,26 @@
 	)
 	(wire
 		(pts
+			(xy 374.65 97.79) (xy 377.19 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7017272-8521-439b-bdaa-d9b713dda542")
+	)
+	(wire
+		(pts
+			(xy 279.4 127) (xy 279.4 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9b940e3-f2ee-442f-a00e-1cf2d1e6fdc9")
+	)
+	(wire
+		(pts
 			(xy 72.39 29.21) (xy 76.2 29.21)
 		)
 		(stroke
@@ -8492,6 +8724,16 @@
 	)
 	(wire
 		(pts
+			(xy 279.4 105.41) (xy 279.4 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4583718-d4d1-4dee-8afc-7a66714c9951")
+	)
+	(wire
+		(pts
 			(xy 165.1 243.84) (xy 165.1 248.92)
 		)
 		(stroke
@@ -8539,6 +8781,16 @@
 			(type default)
 		)
 		(uuid "e8d73688-a350-42c7-a8c0-8b263e43f65e")
+	)
+	(wire
+		(pts
+			(xy 372.11 107.95) (xy 374.65 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e986fc2b-362d-436c-bee5-fe945febe13f")
 	)
 	(wire
 		(pts
@@ -9722,6 +9974,28 @@
 			)
 		)
 	)
+	(global_label "+5V"
+		(shape input)
+		(at 372.11 95.25 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "78c1539b-1a8b-453d-b8c2-bc1fa688789e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 365.2543 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "MISO{slash}D12"
 		(shape output)
 		(at 76.2 50.8 0)
@@ -10109,6 +10383,50 @@
 		(uuid "a34735b5-4e1d-4cce-aa01-2cb9f9e7c8e7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 39.8757 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "A3"
+		(shape input)
+		(at 372.11 107.95 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a4e5bd3c-fad1-46a2-923c-af98da5be79a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 366.8267 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "A0"
+		(shape input)
+		(at 279.4 111.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a63c0e90-cc7f-40d0-857f-a320d80556c8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 284.6833 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10734,9 +11052,9 @@
 			)
 		)
 	)
-	(global_label "Resistance_Input"
+	(global_label "2V_Rang"
 		(shape input)
-		(at 279.4 105.41 0)
+		(at 287.02 105.41 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10746,12 +11064,12 @@
 		)
 		(uuid "f8b8b1ca-d367-4557-a5ff-44173c613807")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 262.5659 105.41 0)
+			(at 297.9879 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -11143,6 +11461,75 @@
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
 					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 382.27 95.25 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1879310f-71f4-41a2-8cdc-b77f6a6ba12f")
+		(property "Reference" "J5"
+			(at 384.81 95.504 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Resistance Meas"
+			(at 384.81 98.044 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 382.27 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 382.27 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 382.27 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ef440d71-4583-4cdc-966f-5c502ee1292c")
+		)
+		(pin "1"
+			(uuid "f6381c2f-be30-4c32-ae1b-01d314627c73")
+		)
+		(instances
+			(project "oshe_dmm_project_v1"
+				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
+					(reference "J5")
 					(unit 1)
 				)
 			)
@@ -15617,6 +16004,74 @@
 		)
 	)
 	(symbol
+		(lib_id "Diode:SMAJ200A")
+		(at 283.21 105.41 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b534477e-cb15-44e2-9c18-dec0cdfd2967")
+		(property "Reference" "D4"
+			(at 283.21 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMAJ200A"
+			(at 283.21 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SMA"
+			(at 283.21 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
+			(at 284.48 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "400W unidirectional Transient Voltage Suppressor, 200.0Vr, SMA(DO-214AC)"
+			(at 283.21 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "24b74393-b5d2-4ad8-8660-4ac695a45505")
+		)
+		(pin "2"
+			(uuid "84f5eec8-d153-4656-b31c-8ff6a868ec5a")
+		)
+		(instances
+			(project ""
+				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 144.78 257.81 0)
 		(unit 1)
@@ -16616,6 +17071,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_US")
+		(at 374.65 102.87 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dd283488-c44f-43e4-81c7-9985c57bdea2")
+		(property "Reference" "R34"
+			(at 377.19 101.5999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "R?"
+			(at 377.19 104.1399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 373.634 102.616 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 374.65 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 374.65 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "50d23c2d-eb26-4ddf-af44-2199f279e1f9")
+		)
+		(pin "2"
+			(uuid "75597544-b1e9-4d72-a3c6-786cd455f4a0")
+		)
+		(instances
+			(project "oshe_dmm_project_v1"
+				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
+					(reference "R34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:TestPoint")
 		(at 229.87 58.42 0)
 		(mirror y)
@@ -17428,6 +17953,74 @@
 			(project "oshe_dmm_project_v1"
 				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
 					(reference "R13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 285.75 121.92 180)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp yes)
+		(uuid "ff3ae153-3879-4fe3-9849-9dd81b536b25")
+		(property "Reference" "R35"
+			(at 285.75 133.35 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "R?"
+			(at 289.052 122.174 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
+			(at 284.734 121.666 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 285.75 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, US symbol"
+			(at 285.75 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4c23e950-48e4-4010-ac34-745b7ebba6b4")
+		)
+		(pin "2"
+			(uuid "f7a3e230-4f1a-4add-a05d-dc6d1279c3b2")
+		)
+		(instances
+			(project "oshe_dmm_project_v1"
+				(path "/24c8480a-c336-4df0-8536-7016ee8fc0ac"
+					(reference "R35")
 					(unit 1)
 				)
 			)
