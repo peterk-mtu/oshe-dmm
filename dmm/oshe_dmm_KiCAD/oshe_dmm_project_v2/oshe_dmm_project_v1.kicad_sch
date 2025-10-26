@@ -10754,7 +10754,7 @@
 				)
 			)
 		)
-		(property "Footprint" "DIP794W47P254L1943H457Q16"
+		(property "Footprint" ""
 			(at 261.62 123.19 0)
 			(effects
 				(font
@@ -12284,7 +12284,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:TSSOP-10_3x3mm_P0.5mm"
+		(property "Footprint" "ZC261500:MODULE_ZC261500"
 			(at 134.62 199.39 0)
 			(effects
 				(font
