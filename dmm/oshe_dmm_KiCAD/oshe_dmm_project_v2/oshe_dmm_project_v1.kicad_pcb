@@ -1412,7 +1412,7 @@
 			(uuid "2e072e5b-eb99-40a6-87dc-7ef2b4ecb94d")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 30.37 14.74 0)
+			(at 0.1 7.2035 0)
 			(layer "F.Fab")
 			(uuid "dc8299c5-48af-4500-83d0-45585e83c70e")
 			(effects
@@ -27328,17 +27328,6 @@
 		(uuid "a99eb027-ab74-4242-adf3-c39956459376")
 	)
 	(gr_rect
-		(start 176.7582 90.5084)
-		(end 196.7582 100.5084)
-		(stroke
-			(width 1)
-			(type solid)
-		)
-		(fill yes)
-		(layer "B.SilkS")
-		(uuid "489a511f-a929-4274-b04a-3dea97e918dd")
-	)
-	(gr_rect
 		(start 176.7582 66.1244)
 		(end 196.9258 85.53)
 		(stroke
@@ -27819,13 +27808,26 @@
 		)
 	)
 	(gr_text "Open Source Hardware Digital Multimeter Project\nVersion 2 - Fall Semester 2025\nAC&DC VOLTAGE AND CURRENT\nRESISTANCE AND CONTINUITY"
-		(at 165.09 72.878 0)
+		(at 168.09 80.878 0)
 		(layer "B.SilkS")
 		(uuid "18f41ad9-c287-429e-b435-c7d3147449fc")
 		(effects
 			(font
 				(size 1 1)
 				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left mirror)
+		)
+	)
+	(gr_text "oshe.io"
+		(at 202.59 93.378 0)
+		(layer "B.SilkS")
+		(uuid "2b55c3da-1be6-42d7-a375-e93d7c939230")
+		(effects
+			(font
+				(size 4 4)
+				(thickness 0.75)
 				(bold yes)
 			)
 			(justify left mirror)
@@ -27841,6 +27843,19 @@
 				(thickness 0.15)
 			)
 			(justify mirror)
+		)
+	)
+	(gr_text "Digital Multimeter V2"
+		(at 202.336 97.95 0)
+		(layer "B.SilkS")
+		(uuid "7942cd81-5b8b-48f8-9574-d639e529d1b8")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.5)
+				(bold yes)
+			)
+			(justify left mirror)
 		)
 	)
 	(gr_text "Thermistor1"
@@ -27866,6 +27881,19 @@
 				(bold yes)
 			)
 			(justify top mirror)
+		)
+	)
+	(gr_text "Designed By: Luc Prisby, Caleb Jahncke, James Lovell\nEvan Howard"
+		(at 202.082 101.633 0)
+		(layer "B.SilkS")
+		(uuid "b894ece0-f799-4717-ab00-64a5b48baf69")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.2)
+				(bold yes)
+			)
+			(justify left mirror)
 		)
 	)
 	(gr_text "BAT+1"
@@ -40900,6 +40928,12 @@
 		(uuid "458f6cb3-cb3d-4ea3-9a41-eb73b2f855e0")
 		(members "5c03bb89-ae3c-4e64-a1d7-b63e82f1b14a" "5cd4845c-db90-4dd5-8534-acd3e6523fc5"
 			"9994bad0-db57-4957-bd30-050917f2f895"
+		)
+	)
+	(group ""
+		(uuid "fc1ca68c-ea05-4bbf-91ca-e8f93e79479c")
+		(members "2b55c3da-1be6-42d7-a375-e93d7c939230" "7942cd81-5b8b-48f8-9574-d639e529d1b8"
+			"b894ece0-f799-4717-ab00-64a5b48baf69"
 		)
 	)
 	(embedded_fonts no)
