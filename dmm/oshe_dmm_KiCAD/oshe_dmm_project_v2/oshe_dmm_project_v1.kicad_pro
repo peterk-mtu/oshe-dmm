@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.86,
-          "height": 1.21,
-          "width": 1.21
+          "drill": 1.0,
+          "height": 1.778,
+          "width": 1.778
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -640,10 +640,6 @@
     [
       "24c8480a-c336-4df0-8536-7016ee8fc0ac",
       "Root"
-    ],
-    [
-      "66038875-622e-477c-8adf-f6f44b4abfa5",
-      "dmm_test_circuit"
     ]
   ],
   "text_variables": {}
