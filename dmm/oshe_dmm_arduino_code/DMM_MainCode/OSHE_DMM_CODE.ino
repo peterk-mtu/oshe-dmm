@@ -309,7 +309,7 @@ void loop() {
     pinMode(contPin, LOW);
 
     lcd.clear();
-    lcd.print("OSHE DMM  (RESISTANCE)");
+    lcd.print("OSHE DMM   (RES)");
     lcd.setCursor(0, 1);
 
     int cOut;
@@ -391,16 +391,16 @@ void loop() {
     pinMode(contPin, INPUT_PULLUP);
 
     lcd.clear();
-    lcd.print("OSHE DMM  (CONTINUITY)");
+    lcd.print("OSHE DMM  (CONT)");
     lcd.setCursor(0, 1);
 
     if(digitalRead(contPin) == LOW)
     {
-        lcd.print("THERE IS CONTINUITY!");
+        lcd.print("THERE IS CONT!!");
     } 
     else
     {
-        lcd.print("------------");
+        lcd.print("----------------");
     }
 
     delay(500);
