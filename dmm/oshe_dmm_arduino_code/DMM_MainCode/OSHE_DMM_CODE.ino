@@ -6,14 +6,28 @@
 //            Caleb Jahncke
 //            James Lovell
 //Created on: 10/31/2025
-//Last Modified on: 11/03/2025
+//Last Modified on: 11/07/2025
 
+//for ac current meas multiply the adc value by 5
+//one adc for AC one conected to 5v adc for DC connected to GND
+
+//voltage measure GAIN_TWO
+
+//AC current GAIN_FOUR
+//DC current GAIN_FIVE?
 
 // Include Necessary Libraries:
 #include <LiquidCrystal.h>
 #include "INA219.h"
 #include <Wire.h>
 #include <Adafruit_ADS1X15.h>
+
+//2 ads creation
+Adafruit_ADS1115 ads1;
+Adafruit_ADS1115 ads2;
+
+// DC current Shunt Resistor
+#define SHUNT_Res 0.05
 
 // Setup for the resistance measurement
 #define NUM_REF_RESISTORS 8
@@ -27,6 +41,15 @@ float rRef[NUM_REF_RESISTORS] = {49.5, 100, 1000, 10000, 100000, 1000000, 499000
 // Multiplexer select pins              A  B  C
 const byte rSelPins[NUM_SELECT_PINS] = {6, 7, 8};
 const byte enableMux = 9;
+
+//AC Current setup
+const float FACTOR = 5; //5A/1V from teh CT
+
+const float multiplier = 0.00005;
+
+//AC voltage setup optional smoothing constants
+const int numSamples = 10;    // Number of samples for moving average
+float voltageAvg = 0;         // Running average
  
 // Set up variables:
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2; // LCD Pins
@@ -53,8 +76,8 @@ void setup()
   INA.setMaxCurrentShunt(5, 0.05);
 
   //---Set up ADS1115 Voltage ADC---//
-  ads.begin(0x48);
-  ads.setGain(GAIN_ONE); // Set gain to avoid clipping (allows input up to ±6.144V)
+  ads1.begin(0x48); // GND address for DC addressing
+  ads2.begin(0x49); // 5v address for AC addressing
 
   //---Set up resistance pins---//
   pinMode(enableMux, OUTPUT);
@@ -90,19 +113,23 @@ void loop() {
   {
     //---Pin for continuity---/
     pinMode(contPin, LOW);
+    delay(100);
+
+    ads1.setGain(GAIN_TWO);
+    delay(100);
 
     // Force a new differential reading (AIN0 - AIN1)
-    ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
+    ads1.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
 
     // Wait for conversion to complete
-    while (!ads.conversionComplete()) 
+    while (!ads1.conversionComplete()) 
     {
         delay(10);
     }
 
     // Read ADC result
-    int16_t rawValue = ads.getLastConversionResults();
-    float voltage = ads.computeVolts(rawValue);
+    int16_t rawValue = ads1.getLastConversionResults();
+    float voltage = ads1.computeVolts(rawValue);
 
     // Display's Voltage Reading on LCD
     lcd.clear();
@@ -121,19 +148,23 @@ void loop() {
   {
     //---Pin for continuity---/
     pinMode(contPin, LOW);
+    delay(100);
+
+    ads1.setGain(GAIN_TWO);
+    delay(100);
 
     // Force a new differential reading (AIN0 - AIN1)
-    ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
+    ads1.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
 
     // Wait for conversion to complete
-    while (!ads.conversionComplete()) 
+    while (!ads1.conversionComplete()) 
     {
         delay(10);
     }
 
     // Read ADC result
-    int16_t rawValue = ads.getLastConversionResults();
-    float voltage = (ads.computeVolts(rawValue) * 10.06); // * 10 puts voltage back into current range
+    int16_t rawValue = ads1.getLastConversionResults();
+    float voltage = (ads1.computeVolts(rawValue) * 10.06); // * 10 puts voltage back into current range
 
     // Display's Voltage Reading on LCD
     lcd.clear();
@@ -152,19 +183,23 @@ void loop() {
   {
     //---Pin for continuity---/
     pinMode(contPin, LOW);
+    delay(100);
+
+    ads1.setGain(GAIN_TWO);
+    delay(100);
 
     // Force a new differential reading (AIN0 - AIN1)
-    ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
+    ads1.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
 
     // Wait for conversion to complete
-    while (!ads.conversionComplete()) 
+    while (!ads1.conversionComplete()) 
     {
         delay(10);
     }
 
     // Read ADC result
-    int16_t rawValue = ads.getLastConversionResults();
-    float voltage = (ads.computeVolts(rawValue) * 99.06); // * 101 puts voltage back into current range
+    int16_t rawValue = ads1.getLastConversionResults();
+    float voltage = (ads1.computeVolts(rawValue) * 99.06); // * 101 puts voltage back into current range
 
     // Display's Voltage Reading on LCD
     lcd.clear();
@@ -183,26 +218,42 @@ void loop() {
   {
     //---Pin for continuity---/
     pinMode(contPin, LOW);
+    delay(100);
 
-    // Force a new differential reading (AIN0 - AIN1)
-    ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
+    ads2.setGain(GAIN_TWO);
+    delay(100);
 
-    // Wait for conversion to complete
-    while (!ads.conversionComplete()) 
+    // Read single-ended channel A0 (to GND)
+    int16_t raw = ads2.readADC_SingleEnded(0);
+    float volts = ads2.computeVolts(raw);
+
+    // Simple moving average for smoothing
+    static float readings[numSamples];
+    static int index = 0;
+    static bool filled = false;
+
+    readings[index] = volts;
+    index = (index + 1) % numSamples;
+
+    float sum = 0;
+    for (int i = 0; i < (filled ? numSamples : index); i++) 
     {
-        delay(10);
+      sum += readings[i];
     }
+    voltageAvg = sum / (filled ? numSamples : index);
+    if (index == 0) filled = true;
 
-    // Read ADC result
-    int16_t rawValue = ads.getLastConversionResults();
-    float voltage = ads.computeVolts(rawValue);
+    // Print results
+    /*Serial.print("Raw: "); Serial.print(raw);
+    Serial.print("   Instant: "); Serial.print(volts, 4);
+    Serial.print(" V   Smoothed: "); Serial.print(voltageAvg, 4);
+    Serial.println(" V");*/
 
-    // Display's Voltage Reading on LCD
     lcd.clear();
-    lcd.print("OSHE DMM    (2V)");
+    lcd.print("OSHE DMM  (2VAC)");
     lcd.setCursor(0, 1);
     lcd.print("Voltage: ");
-    lcd.print(voltage);
+    lcd.print(voltageAvg);
     lcd.print(" V");
 
     // Wait 0.5 seconds before next reading
@@ -214,26 +265,42 @@ void loop() {
   {
     //---Pin for continuity---/
     pinMode(contPin, LOW);
+    delay(100);
 
-    // Force a new differential reading (AIN0 - AIN1)
-    ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
+    ads2.setGain(GAIN_TWO);
+    delay(100);
 
-    // Wait for conversion to complete
-    while (!ads.conversionComplete()) 
+    // Read single-ended channel A0 (to GND)
+    int16_t raw = ads2.readADC_SingleEnded(0);
+    float volts = ads2.computeVolts(raw);
+
+    // Simple moving average for smoothing
+    static float readings[numSamples];
+    static int index = 0;
+    static bool filled = false;
+
+    readings[index] = volts;
+    index = (index + 1) % numSamples;
+
+    float sum = 0;
+    for (int i = 0; i < (filled ? numSamples : index); i++) 
     {
-        delay(10);
+      sum += readings[i];
     }
+    voltageAvg = (sum / (filled ? numSamples : index)) * 10.06;
+    if (index == 0) filled = true;
 
-    // Read ADC result
-    int16_t rawValue = ads.getLastConversionResults();
-    float voltage = (ads.computeVolts(rawValue) * 10.06); // * 10 puts voltage back into current range
+    // Print results
+    /*Serial.print("Raw: "); Serial.print(raw);
+    Serial.print("   Instant: "); Serial.print(volts, 4);
+    Serial.print(" V   Smoothed: "); Serial.print(voltageAvg, 4);
+    Serial.println(" V");*/
 
-    // Display's Voltage Reading on LCD
     lcd.clear();
-    lcd.print("OSHE DMM   (20V)");
+    lcd.print("OSHE DMM (20VAC)");
     lcd.setCursor(0, 1);
     lcd.print("Voltage: ");
-    lcd.print(voltage);
+    lcd.print(voltageAvg);
     lcd.print(" V");
 
     // Wait 0.5 seconds before next reading
@@ -245,26 +312,42 @@ void loop() {
   {
     //---Pin for continuity---/
     pinMode(contPin, LOW);
+    delay(100);
 
-    // Force a new differential reading (AIN0 - AIN1)
-    ads.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
+    ads2.setGain(GAIN_TWO);
+    delay(100);
 
-    // Wait for conversion to complete
-    while (!ads.conversionComplete()) 
+    // Read single-ended channel A0 (to GND)
+    int16_t raw = ads2.readADC_SingleEnded(0);
+    float volts = ads2.computeVolts(raw);
+
+    // Simple moving average for smoothing
+    static float readings[numSamples];
+    static int index = 0;
+    static bool filled = false;
+
+    readings[index] = volts;
+    index = (index + 1) % numSamples;
+
+    float sum = 0;
+    for (int i = 0; i < (filled ? numSamples : index); i++) 
     {
-        delay(10);
+      sum += readings[i];
     }
+    voltageAvg = (sum / (filled ? numSamples : index)) * 99.06;
+    if (index == 0) filled = true;
 
-    // Read ADC result
-    int16_t rawValue = ads.getLastConversionResults();
-    float voltage = (ads.computeVolts(rawValue) * 99.06); // * 101 puts voltage back into current range
+    // Print results
+    /*Serial.print("Raw: "); Serial.print(raw);
+    Serial.print("   Instant: "); Serial.print(volts, 4);
+    Serial.print(" V   Smoothed: "); Serial.print(voltageAvg, 4);
+    Serial.println(" V");*/
 
-    // Display's Voltage Reading on LCD
     lcd.clear();
-    lcd.print("OSHE DMM  (200V)");
+    lcd.print("OSHE DMM(200VAC)");
     lcd.setCursor(0, 1);
     lcd.print("Voltage: ");
-    lcd.print(voltage);
+    lcd.print(voltageAvg);
     lcd.print(" V");
 
     // Wait 0.5 seconds before next reading
@@ -276,16 +359,35 @@ void loop() {
   {
     //---Pin for continuity---/
     pinMode(contPin, LOW);
+    delay(100);
+
+    ads1.setGain(GAIN_FIVE);
+    delay(100);
     
-    float current=0;
-    current=INA.getCurrent();
+    // Force a new differential reading (AIN0 - AIN1)
+    ads1.startADCReading(ADS1X15_REG_CONFIG_MUX_DIFF_0_1, false); // false means one shot mode, forces a full measurement and waits for math
+
+    // Wait for conversion to complete
+    while (!ads1.conversionComplete()) 
+    {
+        delay(10);
+    }
+
+    // Read ADC result
+    int16_t rawValue = ads1.getLastConversionResults();
+    float voltage = ads1.computeVolts(rawValue);
+
+    float DCcurrent = voltage / SHUNT_Res;
+
+    /*float current=0;
+    current=INA.getCurrent();*/
 
     // Display's Voltage Reading on LCD
     lcd.clear();
-    lcd.print("OSHE DMM  (mA/A)");
+    lcd.print("OSHE DMM  (DCI)");
     lcd.setCursor(0, 1);
     lcd.print("Current: ");
-    lcd.print(current);
+    lcd.print(DCcurrent);
     lcd.print(" A");
 
     // Wait 0.5 seconds before next reading
@@ -298,8 +400,21 @@ void loop() {
   {
     //---Pin for continuity---/
     pinMode(contPin, LOW);
+    delay(100);
 
-    delay(500);
+    ads2.setGain(GAIN_FOUR);
+    delay(100);
+
+    float currentRMS = getcurrent();
+
+    lcd.clear();
+    lcd.print("OSHE DMM  (ACI)");
+    lcd.setCursor(0, 1);
+    lcd.print("Current: ");
+    lcd.print(currentRMS);
+    lcd.print(" A");
+    
+    delay(1000);
   }
 
   //---RESISTANCE MEASUREMENT---//
@@ -307,6 +422,7 @@ void loop() {
   {
     //---Pin for continuity---/
     pinMode(contPin, LOW);
+    delay(100);
 
     lcd.clear();
     lcd.print("OSHE DMM   (RES)");
@@ -447,4 +563,27 @@ char ScaleToMetricUnits(float *prVal, char fStr[])
   }
 
   return unit;
+}
+
+//function for AC current calc
+float getcurrent()
+{
+  float voltage;
+  float current;
+  float sum = 0;
+  long time_check = millis();
+  int counter = 0;
+
+  while (millis() - time_check < 1000)
+  {
+    voltage = ads2.readADC_Differential_0_1() * multiplier;
+    current = voltage * FACTOR;
+    //current /= 1000.0;
+
+    sum += sq(current);
+    counter = counter + 1;
+  }
+
+  current = sqrt(sum / counter);
+  return (current);
 }
