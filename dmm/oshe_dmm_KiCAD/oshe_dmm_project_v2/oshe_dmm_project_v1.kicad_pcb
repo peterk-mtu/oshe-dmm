@@ -1861,7 +1861,7 @@
 				)
 			)
 		)
-		(property "Value" "R?"
+		(property "Value" "2.7k"
 			(at 0 1.83 90)
 			(layer "F.Fab")
 			(uuid "7172d5f6-1e51-4f5c-a10c-0dba297e8a3a")
@@ -9904,7 +9904,7 @@
 				)
 			)
 		)
-		(property "Value" "180"
+		(property "Value" "91k"
 			(at 0 1.82 90)
 			(layer "F.Fab")
 			(uuid "3054559e-7af3-43c8-beb8-f3e2bbe913bc")
@@ -11383,7 +11383,7 @@
 				)
 			)
 		)
-		(property "Value" "680"
+		(property "Value" "39k"
 			(at 0 1.82 90)
 			(layer "F.Fab")
 			(uuid "eccd8772-43b6-4a4b-8f50-3feaccfde8b0")
@@ -12148,7 +12148,7 @@
 				)
 			)
 		)
-		(property "Value" "R?"
+		(property "Value" "4.7k"
 			(at 0 1.82 90)
 			(layer "F.Fab")
 			(uuid "0abe8cb2-0d46-44dd-b744-301e930adc5e")
@@ -12349,7 +12349,7 @@
 				)
 			)
 		)
-		(property "Value" "3k"
+		(property "Value" "6.8k"
 			(at 0 1.83 90)
 			(layer "F.Fab")
 			(uuid "8d210863-8bc1-4303-af60-1152599cb550")
@@ -12548,7 +12548,7 @@
 				)
 			)
 		)
-		(property "Value" "1.8k"
+		(property "Value" "15k"
 			(at 0 1.83 90)
 			(layer "F.Fab")
 			(uuid "682260f9-d165-46c9-a8bf-5e1896c0e7fc")
@@ -18257,7 +18257,7 @@
 				)
 			)
 		)
-		(property "Value" "1.2k"
+		(property "Value" "24k"
 			(at 0 1.82 90)
 			(layer "F.Fab")
 			(uuid "9758fea7-a3aa-4502-af62-335780427439")
@@ -18914,7 +18914,7 @@
 				)
 			)
 		)
-		(property "Value" "2.4k"
+		(property "Value" "10k"
 			(at 0 1.83 90)
 			(layer "F.Fab")
 			(uuid "98377f4f-0b45-46d8-9af4-36188f62542a")
@@ -25530,7 +25530,7 @@
 				)
 			)
 		)
-		(property "Value" "R?"
+		(property "Value" "1.3k"
 			(at -4.82 -82.11 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -25985,7 +25985,7 @@
 				)
 			)
 		)
-		(property "Value" "R?"
+		(property "Value" "220"
 			(at 0 1.83 90)
 			(layer "F.Fab")
 			(uuid "5cb1013b-7897-477d-8350-8f28322c2de3")
@@ -27316,6 +27316,79 @@
 		(layer "F.Mask")
 		(uuid "edbdfd77-224b-47ae-82fb-dae2571369ac")
 	)
+	(gr_line
+		(start 205.49 133.598)
+		(end 205.5 136.178)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "054549d4-347e-493b-91a7-9ba55e42d7ca")
+	)
+	(gr_line
+		(start 200.49 118.828)
+		(end 200.49 128.828)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "255437e9-357b-4a24-9161-ffd485e0a946")
+	)
+	(gr_rect
+		(start 141.89 109.577)
+		(end 208.94 112.558)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "2dadfad6-5ade-4376-b32e-41d4a70760c5")
+	)
+	(gr_line
+		(start 210.94 125.788)
+		(end 210.94 122.788)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "3390410c-92b0-4d90-b1ab-76f88ec83338")
+	)
+	(gr_rect
+		(start 208.94 99.328)
+		(end 210.94 109.558)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "64cfef3e-dc87-4722-aca9-24b75fd9bd64")
+	)
+	(gr_line
+		(start 173.11 71.768)
+		(end 130.61 71.768)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "7477dc6a-2c1b-4778-af10-282484c894ce")
+	)
+	(gr_rect
+		(start 208.94 96.328)
+		(end 210.94 99.328)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "936b4415-c607-4670-879e-9be01dc3b379")
+	)
 	(gr_rect
 		(start 121.5005 68.577)
 		(end 207.5005 109.577)
@@ -27326,6 +27399,39 @@
 		(fill no)
 		(layer "F.SilkS")
 		(uuid "a99eb027-ab74-4242-adf3-c39956459376")
+	)
+	(gr_rect
+		(start 208.94 109.558)
+		(end 210.94 112.558)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "b037073a-729b-4029-8fcd-b15ed433244e")
+	)
+	(gr_rect
+		(start 208.94 86.098)
+		(end 210.94 96.328)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "d08bf2b1-82ad-4ecf-8114-a2b25027e89b")
+	)
+	(gr_rect
+		(start 210.94 125.788)
+		(end 210.94 228.288)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "d620e2e6-3db5-4c25-ab07-224d35ac866c")
 	)
 	(gr_rect
 		(start 176.7582 66.1244)
@@ -27373,10 +27479,10 @@
 	)
 	(gr_circle
 		(center 205.892 225.23)
-		(end 207.416 225.23)
+		(end 205.892 223.706)
 		(stroke
 			(width 0.05)
-			(type default)
+			(type solid)
 		)
 		(fill no)
 		(layer "Edge.Cuts")
