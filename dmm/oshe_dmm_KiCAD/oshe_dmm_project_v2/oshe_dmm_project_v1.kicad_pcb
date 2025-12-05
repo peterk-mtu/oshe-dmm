@@ -27511,6 +27511,18 @@
 			(justify bottom)
 		)
 	)
+	(gr_text "R_REF"
+		(at 148.43 174.828 90)
+		(layer "F.SilkS")
+		(uuid "060896d0-975c-4b61-aad5-4da78b49abb3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom)
+		)
+	)
 	(gr_text "20V"
 		(at 159.664 181.669 0)
 		(layer "F.SilkS")
@@ -27579,6 +27591,18 @@
 				(size 1 1)
 				(thickness 0.15)
 			)
+		)
+	)
+	(gr_text "ACV_Rng_3"
+		(at 166.34 163.508 90)
+		(layer "F.SilkS")
+		(uuid "474de71b-8d95-4afb-9dba-88498237ff09")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom)
 		)
 	)
 	(gr_text "LCD"
@@ -27653,7 +27677,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Amp"
+	(gr_text "DCI"
 		(at 179.095 181.669 0)
 		(layer "F.SilkS")
 		(uuid "64cb462d-a069-4e93-a156-de6e5060f2c1")
@@ -27737,6 +27761,18 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "R_MEAS"
+		(at 158.27 164.318 90)
+		(layer "F.SilkS")
+		(uuid "ac2fdd0e-dc0e-4cfb-b456-2db0a518c758")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom)
+		)
+	)
 	(gr_text "GND"
 		(at 122.588 193.281 0)
 		(layer "F.SilkS")
@@ -27746,6 +27782,30 @@
 				(size 1 1)
 				(thickness 0.15)
 			)
+		)
+	)
+	(gr_text "ACI"
+		(at 161.88 163.678 90)
+		(layer "F.SilkS")
+		(uuid "bbfdb6b3-25ec-4990-896f-c8d26de717d5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom)
+		)
+	)
+	(gr_text "ACV_Rng_2"
+		(at 170.74 163.448 90)
+		(layer "F.SilkS")
+		(uuid "bd1d559f-60a2-472c-b1b3-f9b27c346150")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom)
 		)
 	)
 	(gr_text "2VDC"
@@ -27788,6 +27848,30 @@
 		(at 128.17 117.928 0)
 		(layer "F.SilkS")
 		(uuid "cb38ab82-0d2a-43ba-8834-0cff30eb53e6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom)
+		)
+	)
+	(gr_text "ACV_Rng_1"
+		(at 174.82 164.618 90)
+		(layer "F.SilkS")
+		(uuid "ce8b7bb7-f66d-487d-b666-fc90af9e1bf2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify bottom)
+		)
+	)
+	(gr_text "CONT"
+		(at 151.39 173.218 90)
+		(layer "F.SilkS")
+		(uuid "cf14ed5e-42bf-4720-bc86-e0e291b8aa63")
 		(effects
 			(font
 				(size 1 1)
