@@ -27993,16 +27993,6 @@
 		(layer "F.SilkS")
 		(uuid "2dadfad6-5ade-4376-b32e-41d4a70760c5")
 	)
-	(gr_line
-		(start 210.94 125.788)
-		(end 210.94 122.788)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "F.SilkS")
-		(uuid "3390410c-92b0-4d90-b1ab-76f88ec83338")
-	)
 	(gr_rect
 		(start 208.94 99.328)
 		(end 210.94 109.558)
@@ -28067,17 +28057,6 @@
 		(fill no)
 		(layer "F.SilkS")
 		(uuid "d08bf2b1-82ad-4ecf-8114-a2b25027e89b")
-	)
-	(gr_rect
-		(start 210.94 125.788)
-		(end 210.94 228.288)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(fill no)
-		(layer "F.SilkS")
-		(uuid "d620e2e6-3db5-4c25-ab07-224d35ac866c")
 	)
 	(gr_rect
 		(start 176.7582 66.1244)
